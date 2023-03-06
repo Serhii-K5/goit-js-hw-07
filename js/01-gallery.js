@@ -20,7 +20,7 @@ galleryItems.forEach(el => {
   galleryDiv.append(link);
 	link.append(img);
 	arr.push(galleryDiv);
-})
+});
 
 gallery.append(...arr);
 
