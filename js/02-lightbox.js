@@ -23,10 +23,17 @@ const gallery = document.querySelector('.gallery');
 // gallery.append(...arr);
 
 // v2
-const textInsert = galleryItems
-	.map(el => `<a class="gallery__link" href=${el.original}><img class="gallery__image" src=${el.preview} data-source=${el.original} alt=${el.description}></a>`)
-	.join('');
+// const textInsert = galleryItems
+// 	.map(el => `<a class="gallery__link" href=${el.original}><img class="gallery__image" src=${el.preview} data-source=${el.original} alt=${el.description}></a>`)
+// 	.join('');
 
+// gallery.insertAdjacentHTML("beforeend", textInsert);
+
+// v3
+const textInsert = galleryItems
+  .map(({ original, preview, description }) => `<a class="gallery__link" href=${original}><img class="gallery__image" src=${preview} data-source=${original} alt=${description}></a>`)
+	.join("");
+	
 gallery.insertAdjacentHTML('beforeend', textInsert);
 
 new SimpleLightbox('.gallery a', {});
