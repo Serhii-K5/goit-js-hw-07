@@ -24,18 +24,18 @@ const gallery = document.querySelector('.gallery');
 
 // v2
 // const textInsert = galleryItems
-// 	.map(el => `<a class="gallery__link" href=${el.original}><img class="gallery__image" src=${el.preview} data-source=${el.original} alt=${el.description}></a>`)
-// 	.join('');
+//   .map((el) => `<a class="gallery__link" href=${el.original}><img class="gallery__image" src=${el.preview} data-source=${el.original} title="${el.description}" alt="${el.description}"></a>`)
+//   .join("");
 
 // gallery.insertAdjacentHTML("beforeend", textInsert);
 
 // v3
 const textInsert = galleryItems
-  .map(({ original, preview, description }) => `<a class="gallery__link" href=${original}><img class="gallery__image" src=${preview} data-source=${original} alt=${description}></a>`)
+  .map(({ original, preview, description }) => `<a class="gallery__link" href=${original}><img class="gallery__image" src=${preview} data-source=${original} title="${description}" alt="${description}"></a>`)
 	.join("");
 	
 gallery.insertAdjacentHTML('beforeend', textInsert);
 
-new SimpleLightbox('.gallery a', {});
+new SimpleLightbox(".gallery a", {captionDelay: 250});
 
 console.log(galleryItems);
