@@ -12,8 +12,8 @@ const gallery = document.querySelector('.gallery');
 
 // 	const img = document.createElement('img');
 //   img.className = 'gallery__image';
-//   img.src = el.preview;
-//   img.setAttribute('title', el.original);
+//   img.src = el.preview; 
+//   img.setAttribute('title', `${el.description}`);
 //   img.alt = el.description;
 
 //   link.append(img);
