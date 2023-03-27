@@ -1,6 +1,7 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 const gallery = document.querySelector('.gallery');
+// v1
 const arr = [];
 
 galleryItems.forEach(el => {
@@ -23,6 +24,14 @@ galleryItems.forEach(el => {
 });
 
 gallery.append(...arr);
+
+// v2
+// const textInsert = galleryItems
+//   .map((el) => `<a class="gallery__link" href=${el.original}><img class="gallery__image" src=${el.preview} data-source=${el.original} alt="${el.description}"></a>`)
+//   .join("");
+
+// gallery.insertAdjacentHTML("beforeend", textInsert);
+
 
 gallery.addEventListener('click', el => {  
   el.preventDefault();
